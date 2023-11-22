@@ -58,12 +58,6 @@ python manage.py runserver
 - celery -A config worker -l INFO
 - celery -A config beat -l INFO
 
-## Тесты
-
-Чтобы запустить тесты, выполните следующую команду:
-
-python manage.py test
-
 ## Docker
 
 Если вы предпочитаете использовать Docker:
