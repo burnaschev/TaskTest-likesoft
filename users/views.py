@@ -3,11 +3,12 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 
 from users.models import User
-from users.serializers import UserSerializer
+from users.serializers import UserSerializers
+from users.tasks import send_welcome_email
 
 
 class UserCreateAPIViewSet(generics.CreateAPIView):
-    serializer_class = UserSerializer
+    serializer_class = UserSerializers
     queryset = User.objects.all()
     permission_classes = [AllowAny]
 
