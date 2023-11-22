@@ -13,6 +13,7 @@ class UserCreateAPIViewSet(generics.CreateAPIView):
     permission_classes = [AllowAny]
 
     def perform_create(self, serializer):
+        """Отправка сообщения регистраций на веб сервисе"""
         user = serializer.save()
         send_welcome_email.delay(user.id)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
