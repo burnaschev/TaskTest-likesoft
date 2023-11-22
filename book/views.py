@@ -1,7 +1,7 @@
-from django.shortcuts import render
 from rest_framework import generics
 
 from book.models import Book
+from book.paginators import BookPaginator
 from book.serializers import BookSerializer
 
 
@@ -17,8 +17,7 @@ class BookRetrieveAPIView(generics.RetrieveAPIView):
 class BookListAPIView(generics.ListAPIView):
     serializer_class = BookSerializer
     queryset = Book.objects.all()
-    pagination_class = LMSPaginator
-
+    pagination_class = BookPaginator
 
 
 class BookUpdateAPIView(generics.UpdateAPIView):
