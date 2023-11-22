@@ -35,6 +35,11 @@ git clone https://github.com/burnaschev/DRF_project.git
 python3 -m venv venv
 source venv/bin/activate
 
+### Переменные окружения
+
+Все необходимые переменные окружения находятся в файле .env_sample
+
+Нужно создать свой переменные окружения в файле .env
 
 ### Установка зависимостей
 
